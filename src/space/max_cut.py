@@ -577,7 +577,7 @@ def getLowBoundsViaSAQABasedMinCut(G, numMaxCutUBNodes = 1
                     
                     print('Sample solutions via QA...')
                     sampler = EmbeddingComposite(DWaveSampler(endpoint='https://cloud.dwavesys.com/sapi'
-                                                              , token='DEV-945863100596cbd2bb827007a9ab8164e81a2829'
+                                                              , token='xxx'
                                                               , solver='DW_2000Q_2_1'))
                     res = sampler.sample(bqm, num_reads=10)
                     res = res.record
@@ -865,7 +865,7 @@ def doMaxCut(G,numMaxCutUBNodes = 1
                 
                 print('Sample solutions via QA...')
                 sampler = EmbeddingComposite(DWaveSampler(endpoint='https://cloud.dwavesys.com/sapi'
-                                                          , token='DEV-945863100596cbd2bb827007a9ab8164e81a2829'
+                                                          , token='xxx'
                                                           , solver='DW_2000Q_2_1'))
                 res = sampler.sample(bqm, num_reads=10)
                 res = res.record
@@ -979,6 +979,6 @@ if __name__ == '__main__':
     len(G.nodes), len(G.edges)
     n_node, edges = len(G.nodes), list(G.edges)   
      
-    answer = main(n_node, edges)
+    answer = main(n_node, edges, QA)
     print('Group 1', answer[0])
     print('Group 2', answer[1])
